@@ -1,17 +1,19 @@
 $(document).ready(function(){
   $("form#survey").submit(function(event){
-    var favoriteColor=$("select#favorite-color").val();
-    var gender=$("select#gender").val();
-    var genderSeeking=$("select#gender-seeking").val();
+    var favoriteColor =$("select#color").val();
+    var favoriteBook =$("select#book").val();
+    var favoriteFood =$("select#food").val();
+    var result;
 
    
-    if (favoriteColor ==='red' && gender === 'male' && genderSeeking === "female") {
-      $("img#bradley-hangover").show();
-      $("img#bradley-tux").hide();
+    if (favoriteColor ==='red' && favoriteBook === 'women' && favoriteFood === "thai") {
+      result = "Money";
+    
     } else {
-      $("img#bradley-tux").show();
-      $("img#bradley-hangover").hide();
+     result = "Love";
+      
     }
+$("#output").text(result);
 
   event.preventDefault();
   });
